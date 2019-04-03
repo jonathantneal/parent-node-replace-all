@@ -39,9 +39,7 @@ For immediate usage, add this script to your document:
 For Node usage, import [parent-node-replace-all]:
 
 ```js
-const parentNodeReplaceAll = require('parent-node-replace-all');
-
-// ...
+const replaceAll = require('parent-node-replace-all');
 ```
 
 ## Browser compatibility
