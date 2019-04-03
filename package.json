@@ -1,0 +1,57 @@
+{
+  "name": "parent-node-replace-all",
+  "version": "0.1.0",
+  "description": "Remove all child nodes from a ParentNode while allowing the insertion of a new set of nodes",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jonathantneal/replace",
+  "homepage": "https://github.com/jonathantneal/replace#readme",
+  "bugs": "https://github.com/jonathantneal/replace/issues",
+  "main": "node/ponyfill.js",
+  "module": "node/ponyfill.mjs",
+  "files": [
+    "node",
+    "polyfill.js",
+    "ponyfill.js"
+  ],
+  "scripts": {
+    "build": "npm run build:node && npm run build:browser",
+    "build:browser": "npm run build:browser:polyfill && npm run build:browser:ponyfill",
+    "build:browser:polyfill": "cross-env NODE_ENV=browser:polyfill rollup --config && gzip-size polyfill.js",
+    "build:browser:ponyfill": "cross-env NODE_ENV=browser rollup --config && gzip-size ponyfill.js",
+    "build:node": "npm run build:node:polyfill && npm run build:node:ponyfill",
+    "build:node:polyfill": "cross-env NODE_ENV=polyfill rollup --config",
+    "build:node:ponyfill": "rollup --config",
+    "prepublishOnly": "npm run test && npm run build",
+    "test": "eslint src/**/*.js --cache --ignore-path .gitignore --quiet"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-dev": "^2.0.0",
+    "gzip-size-cli": "^3.0.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.8.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "parser": "babel-eslint"
+  },
+  "keywords": [
+    "dom",
+    "document",
+    "element",
+    "node",
+    "replace",
+    "polyfill",
+    "web"
+  ]
+}
