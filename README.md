@@ -26,7 +26,7 @@ import replaceAll from 'parent-node-replace-all';
 document::replaceAll(replacementDocumentFragment);
 ```
 
-The script is approximately 120 bytes when minified and gzipped.
+**[Try It Now]**. The script is approximately 120 bytes when minified and gzipped.
 
 ## Usage
 
@@ -69,3 +69,4 @@ const parentNodeReplaceAll = require('parent-node-replace-all');
 [`ParentNode`]: https://developer.mozilla.org/en/docs/Web/API/ParentNode
 [`ParentNode.replaceAll`]: https://github.com/whatwg/dom/issues/478
 [parent-node-replace-all]: https://github.com/jonathantneal/parent-node-replace-all
+[Try It Now]: https://codepen.io/jonneal/pen/KYdzPV?editors=1010
